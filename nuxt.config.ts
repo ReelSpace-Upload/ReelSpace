@@ -4,10 +4,6 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/ui', '@nuxtjs/supabase'],
 
-  alias: {
-    cookie: 'cookie',
-  },
-
   css: ['~/assets/css/main.css'],
 
   app: {
@@ -48,7 +44,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'vercel',
     externals: {
-      inline: ['@vueuse/core', '@vueuse/shared'],
+      inline: ['@vueuse/core', '@vueuse/shared', 'cookie'],
     },
   },
 
@@ -56,12 +52,8 @@ export default defineNuxtConfig({
     preference: 'dark',
     fallback: 'dark',
   },
+
   build: {
-    transpile: ['@supabase/ssr']
+    transpile: ['@supabase/ssr'],
   },
-  vite: {
-    optimizeDeps: {
-      exclude: ['cookie']
-    },
-  }
 })
