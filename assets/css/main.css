@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root {
+  --rs-bg: #070b14;
+  --rs-surface: rgba(15, 23, 42, 0.72);
+  --rs-border: rgba(148, 163, 184, 0.14);
+  --rs-accent: #6366f1;
+  --rs-accent-2: #8b5cf6;
+  --rs-glow: rgba(99, 102, 241, 0.35);
+}
+
+html,
+body,
+#__nuxt {
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(139, 92, 246, 0.08), transparent),
+    var(--rs-bg);
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass-panel {
+  background: var(--rs-surface);
+  border: 1px solid var(--rs-border);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #a5b4fc 0%, #c4b5fd 50%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.upload-zone {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.upload-zone--active {
+  border-color: var(--rs-accent) !important;
+  box-shadow: 0 0 0 4px var(--rs-glow);
+}
+
+.rs-auth-layout {
+  min-height: calc(100vh - 4rem);
+  display: grid;
+  place-items: center;
+  padding: 2rem 1.25rem;
+}
+
+.rs-google-btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #18181b;
+  transition: background-color 0.15s ease;
+}
+
+.rs-google-btn:hover:not(:disabled) {
+  background: #f4f4f5;
+}
+
+.rs-google-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rs-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #64748b;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.rs-divider::before,
+.rs-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(148, 163, 184, 0.14);
+}
